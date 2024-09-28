@@ -1,0 +1,285 @@
+/* Основний стиль */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Хедер */
+header {
+    background-color: #ffe4e1;
+    text-align: center;
+    padding: 30px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: lightpink;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Головний банер */
+.hero {
+    background-color: #fff0f5;
+    color: lightpink;
+    text-align: center;
+    padding: 80px 20px;
+    opacity: 0;
+    animation: slideIn 1s forwards;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background-color: lightpink;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ffa9c3;
+}
+
+/* Секція "Про нас" */
+.about-section {
+    background-color: #fff;
+    padding: 50px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+a {
+    text-decoration: none;
+}
+
+.about-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: lightpink;
+}
+
+.about-section p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Секція натхнення */
+.inspiration-section {
+    background-color: #ffe4e1;
+    padding: 50px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+.inspiration-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+blockquote {
+    font-style: italic;
+    margin: 20px 0;
+    padding: 10px;
+    border-left: 5px solid #ff69b4;
+}
+
+blockquote p {
+    font-size: 1.5rem;
+    color: #555;
+}
+
+blockquote cite {
+    display: block;
+    margin-top: 10px;
+    color: #888;
+}
+
+/* Секція цінностей */
+.values-section {
+    background-color: #fff;
+    padding: 50px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+.values-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.value {
+    margin: 20px 0;
+    text-align: center; /* Центруємо текст */
+}
+
+.value h3 {
+    display: inline-block; /* Додаємо inline-block для заголовків */
+    position: relative; /* Необхідно для ::after */
+    margin-bottom: 10px; /* Відстань між заголовком і описом */
+    color: lightpink;
+    font-size: 30px;
+}
+
+
+.value p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.value a {
+    text-decoration: none; /* Вимкнути стандартне підкреслення */
+    position: relative;
+    color: #000; /* Колір тексту */
+}
+
+.value a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Відстань під текстом */
+    height: 2px; /* Товщина лінії */
+    width: 100%;
+    background: #ff4081; /* Колір підкреслення */
+    transform: scaleX(0); /* Сховати початково */
+    transition: transform 0.3s ease; /* Плавна анімація */
+}
+
+.value a:hover::after {
+    transform: scaleX(1); /* Показати підкреслення при наведенні */
+}
+
+/* Контактна секція */
+.contact-section {
+    background-color: #fff;
+    padding: 50px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.email-link {
+    font-size: 1.5rem;
+    color: #ff69b4;
+    text-decoration: none;
+}
+
+/* Футер */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 1rem;
+}
+
+/* Анімації */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.quality {
+    opacity: 0;
+    animation: zoomIn 0.5s forwards;
+}
+
+.quality.zoom-in {
+    animation-delay: 0.5s;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+
+    .cta-button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    .values-section h2, .about-section h2, .inspiration-section h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Секція книг */
+.books-section {
+    background-color: #fff0f5;
+    padding: 50px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+.books-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.books-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.books-section li {
+    font-size: 1.2rem;
+    color: #555;
+    margin: 10px 0;
+}
