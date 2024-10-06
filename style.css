@@ -5,6 +5,72 @@
     box-sizing: border-box;
 }
 
+.container {
+    text-align: center;
+}
+
+.theme-toggle-container {
+    display: inline-block;
+    position: relative;
+    width: 150px;
+    height: 50px;
+    background: linear-gradient(to right, #FFD700, #FF8C00); /* Денний режим */
+    border-radius: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+.theme-toggle-checkbox {
+    display: none;
+}
+
+.theme-toggle-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    transition: background 0.5s ease;
+}
+
+.toggle-text-day, .toggle-text-night {
+    color: white;
+    font-size: 14px;
+}
+
+.toggle-icon {
+    display: flex;
+    align-items: center;
+}
+
+.sun {
+    width: 20px;
+    height: 20px;
+    background-color: yellow;
+    border-radius: 50%;
+    box-shadow: 0 0 10px yellow;
+    margin-right: 10px;
+}
+
+.moon {
+    width: 20px;
+    height: 20px;
+    background-color: lightgray;
+    border-radius: 50%;
+    box-shadow: 0 0 10px lightgray;
+    margin-left: 10px;
+}
+
+.theme-toggle-checkbox:checked + .theme-toggle-btn {
+    background: linear-gradient(to right, #2b1055, #7597de); /* Нічний режим */
+}
+
 body {
     font-family: 'Georgia', serif;
     line-height: 1.6;
@@ -24,84 +90,6 @@ header h1 {
     color: lightpink;
     opacity: 0;
     animation: fadeIn 1s forwards;
-}
-
-.day-night-toggle-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-    text-decoration: none;
-}
-
-.theme-toggle-checkbox {
-    display: none;
-}
-
-.day-night-toggle-btn {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 300px;
-    height: 60px;
-    background-color: #ffe57f;
-    border-radius: 50px;
-    padding: 0 20px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #333;
-    transition: background-color 0.4s ease, color 0.4s ease;
-    overflow: hidden;
-    cursor: pointer;
-}
-
-.toggle-text-day, .toggle-text-night {
-    z-index: 1;
-}
-
-.toggle-icon {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background-color: #fff;
-    border-radius: 50%;
-    left: 10px;
-    transition: transform 0.6s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.sun {
-    width: 30px;
-    height: 30px;
-    background-color: #ffcc00;
-    border-radius: 50%;
-}
-
-.moon {
-    width: 20px;
-    height: 20px;
-    background-color: #f0f0f0;
-    border-radius: 50%;
-    position: absolute;
-    right: -5px;
-    bottom: -5px;
-}
-
-.theme-toggle-checkbox:checked + .day-night-toggle-btn {
-    background-color: #333;
-    color: #ffe57f;
-}
-
-.theme-toggle-checkbox:checked + .day-night-toggle-btn .toggle-icon {
-    transform: translateX(250px); /* Рух кружка до кінця слова "Night" */
-}
-
-.theme-toggle-checkbox:checked + .day-night-toggle-btn .toggle-text-day,
-.theme-toggle-checkbox:checked + .day-night-toggle-btn .toggle-text-night {
-    color: #ffe57f;
 }
 
 nav ul {
